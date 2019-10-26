@@ -28,8 +28,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -42,8 +42,8 @@
 |------|----|-------|
 |body|text|(a)|
 |image|string|(a)|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 (a)bodyもしくはimageのどちらか片方だけでもあればデータベースに登録、どちらも
 無ければvalidateする
