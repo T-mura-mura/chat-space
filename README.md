@@ -40,10 +40,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string|null: false|
+|body|text|(a)|
+|image|string|(a)|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+
+(a)bodyもしくはimageのどちらか片方だけでもあればデータベースに登録、どちらも
+無ければvalidateする
 
 ### Association
 - belongs_to :group
