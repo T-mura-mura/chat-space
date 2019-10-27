@@ -4,12 +4,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|index: true, null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
 ### Association
 - has_many :groups, through: :groups_users
+  has_many :groups_users
 - has_many :messages
 
 
@@ -17,10 +18,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :users, through: :groups_users
+  has_many :groups_users
 - has_many :messages
 
 
