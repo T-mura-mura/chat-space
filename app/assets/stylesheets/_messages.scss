@@ -1,0 +1,124 @@
+.left-content {
+  height: 100vh;
+  width: 300px;
+  float: left;
+
+  &-upper {
+    background-color: #253141;
+    height: 100px;
+
+    &__user {
+      margin-left: 20px;
+      line-height: 100px;
+      font-weight: bold;
+      font-size: 16px;
+      color: $white_color;
+    }
+
+  }
+
+  &-lower {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+
+    &__group {
+      padding-top: 20px;
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      color: $white_color;
+    }
+
+    &__first-message {
+      margin-top: 5px;
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 11px;
+      color: $white_color;
+    }
+  }
+}
+
+.right-content {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  float: left;
+
+  &-upper {
+    height: 99px;
+    border-bottom: 1px solid #eeeeee;
+    @include clearfix();
+
+    &-groupmembers {
+      display: inline-block;
+
+      &__group {
+        font-size: 20px;
+          color: #333333;
+        padding-top: 35px;
+        margin-left: 40px;
+      }
+
+      &__members {
+        font-size: 12px;
+        color: $mini_color;
+        margin-top: 15px;
+        margin-left: 40px;
+      }
+
+    }
+
+    &__btn {
+      float: right;
+      height: 38px;
+      line-height: 38px;
+      border: 1px solid $blue_color;
+      color: $blue_color;
+      margin-top: 28px;
+      margin-right: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: inline-block;
+    }
+  }
+
+  &-middle {
+    background-color: #fafafa;
+    height: calc(100vh - 100px - 46px - 90px);
+    padding-top: 46px;
+    
+
+    &-userdate {
+      @include clearfix();
+
+      &__user {
+        margin-left: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        color: $message_color;
+        float: left;
+      }
+
+      &__date {
+        font-size: 12px;
+        color:  $mini_color;
+        float: left;
+        margin-left: 10px;
+      }
+    }
+
+    &__message {
+      margin-top: 10px;
+      margin-left: 40px;
+      font-size: 14px;
+      color: $message_color;
+      margin-bottom: 40px;
+    }
+  }
+
+  &-lower {
+    height: 90px;
+    background-color: #dddddd;
+  }
+
+}
