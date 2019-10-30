@@ -3,7 +3,8 @@
     .header__message グループを作成しました
   .left-content
     .left-content__upper
-      .left-content__upper__user test-user
+      .left-content__upper__user 
+        = current_user.name
       %ul.left-content__upper__icons
         %li
           =link_to "https://twitter.com", class: "left-content__upper__icons__edit" do
