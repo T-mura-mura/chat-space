@@ -1,17 +1,15 @@
 .contents
-  .header
-    .header__message グループを作成しました
   .left-content
     .left-content__upper
       .left-content__upper__user 
         = current_user.name
       %ul.left-content__upper__icons
         %li
-          =link_to "https://twitter.com", class: "left-content__upper__icons__edit" do
-            = fa_icon 'edit'
+          =link_to new_group_path do
+            = fa_icon 'edit', class: "left-content__upper__icons__edit"
         %li
-          =link_to "https://twitter.com", class: "left-content__upper__icons__cog" do
-            = fa_icon 'cog'
+          =link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: "left-content__upper__icons__cog"
     .left-content__lower
       = render partial: 'group-list'
       = render partial: 'group-list'
