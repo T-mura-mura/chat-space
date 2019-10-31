@@ -5,7 +5,9 @@
       .right-content__upper__groupmembers
         .right-content__upper__groupmembers__group test-group
         .right-content__upper__groupmembers__members Member : aaa bbb
-      .right-content__upper__btn Edit
+      = link_to edit_group_path(@group) do
+        .right-content__upper__btn
+          Edit
     .right-content__middle
       = render partial: 'group-message'
       = render partial: 'group-message'
@@ -15,6 +17,6 @@
         .right-content__lower__textbox__imagefolder
           %label.upload-label
             %i.fa.fa-image
-            %input.upload-image{:type => "file"}
+            %input.upload-image{type: "file"}
       .right-content__lower__btn
         .right-content__lower__btn__text Send
