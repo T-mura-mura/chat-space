@@ -1,0 +1,18 @@
+.left-content
+  .left-content__upper
+    .left-content__upper__user 
+      = current_user.name
+    %ul.left-content__upper__icons
+      %li
+        =link_to new_group_path do
+          = fa_icon 'edit', class: "left-content__upper__icons__edit"
+      %li
+        =link_to edit_user_path(current_user) do
+          = fa_icon 'cog', class: "left-content__upper__icons__cog"
+  .left-content__lower
+    - current_user.groups.each do |group|
+      = link_to '#' do
+        .left-content__lower__group
+          = group.name
+        .left-content__lower__first-message
+          メッセージはまだありません。
