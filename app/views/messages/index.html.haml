@@ -12,11 +12,10 @@
       = render partial: 'group-message'
       = render partial: 'group-message'
     .right-content__lower
-      .right-content__lower__textbox
-        .right-content__lower__textbox__placeholder type a message
-        .right-content__lower__textbox__imagefolder
-          %label.upload-label
-            %i.fa.fa-image
-            %input.upload-image{type: "file"}
-      .right-content__lower__btn
-        .right-content__lower__btn__text Send
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'right-content__lower__textfield', placeholder: 'type a message'
+        .right-content__lower__imagefolder
+          = f.label :image, class: 'upload-label' do
+            = fa_icon 'picture-o'
+            = f.file_field :image, class: 'upload-image'
+        = f.submit 'Send', class: 'right-content__lower__btn'
