@@ -9,8 +9,7 @@
         .right-content__upper__btn
           Edit
     .right-content__middle
-      = render partial: 'group-message'
-      = render partial: 'group-message'
+      = render partial: 'message', collection: @messages
     .right-content__lower
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'right-content__lower__textfield', placeholder: 'type a message'

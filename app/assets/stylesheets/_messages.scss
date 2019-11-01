@@ -155,14 +155,11 @@
       padding-left: 10px;
     }
 
-    .field_with_errors {
-      display: inline-block;
-    }
-
     &__imagefolder {
       display: inline-block;
       position: absolute;
       right: 165px;
+      top: 20px;
       line-height: 50px;
   
       .upload-label {
@@ -177,7 +174,9 @@
     border: none;
     color: $white_color;
     text-align: center;
-    float: right;
+    position: absolute;
+    right: 40px;
+    top: 20px;
     font-size: 16px;
     height: 50px;
     width: 100px;
