@@ -3,8 +3,12 @@
   .right-content
     .right-content__upper
       .right-content__upper__groupmembers
-        .right-content__upper__groupmembers__group test-group
-        .right-content__upper__groupmembers__members Member : aaa bbb
+        .right-content__upper__groupmembers__group 
+          = @group.name
+        .right-content__upper__groupmembers__members
+          Member : 
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
       = link_to edit_group_path(@group) do
         .right-content__upper__btn
           Edit
