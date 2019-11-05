@@ -32,6 +32,14 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $(".right-content__middle").append(html)
+      $(".right-content__middle").animate({
+        scrollTop: $(".right-content__middle")[0].scrollHeight}, 'fast');
+      $(".message-form")[0].reset();
+      $(".right-content__lower__btn").removeAttr('disabled');
     })
+    .fail(function() {
+        alert("メッセージ送信に失敗しました");
+        $(".right-content__lower__btn").removeAttr('disabled');
+    });
   })
 });
