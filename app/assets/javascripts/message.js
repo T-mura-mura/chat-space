@@ -1,16 +1,19 @@
 $(function(){
   function buildHTML(message){
+
+    let text_image = `<p>${message.content}</p>
+                      <img src="${message.image_url}" alt="graphics">`
     let html = `<div class="right-content__middle__userdate">
                   <div class="right-content__middle__userdate__user">
-                  ${message.user.name}
+                    ${message.user_name}
                   </div>
                   <div class="right-content__middle__userdate__date">
-                  ${message.created_at.strftime("%Y/%m/%d %H:%M")}
+                    ${message.created_at}
                   </div>
+                </div>
                 <div class="right-content__middle__message">
-                  <% if message.content.present? %>
-                  ${message.content}
-                  <%= image_tag message.image.url, class: 'image' if message.image.present? %>
+                  ${message.image_url ? text_image : message.content }
+                </div>
                   `
     return html;
   }
@@ -28,6 +31,7 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
+      $(".right-content__middle").append(html)
     })
   })
 });
