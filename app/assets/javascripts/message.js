@@ -64,7 +64,7 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert("通信エラーです。");
     });
   };
   let path = location.pathname.split("/")
