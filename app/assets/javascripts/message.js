@@ -43,4 +43,20 @@ $(function(){
         $(".right-content__lower__btn").removeAttr('disabled');
     });
   })
+
+  let reloadMessages = function() {
+    last_message_id = $(".right-content__middle__userdate").last().data('id');
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      console.log('success');
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  };
 });
