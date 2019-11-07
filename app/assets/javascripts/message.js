@@ -58,9 +58,12 @@ $(function(){
         insertHTML += buildHTML(message);
       });
       $(".right-content__middle").append(insertHTML)
+      $(".right-content__middle").animate({
+        scrollTop: $(".right-content__middle")[0].scrollHeight}, 'fast');
     })
     .fail(function() {
       console.log('error');
     });
   };
+  setInterval(reloadMessages, 5000);
 });
