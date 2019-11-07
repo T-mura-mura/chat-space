@@ -48,9 +48,9 @@ $(function(){
     last_message_id = $(".right-content__middle__userdate").last().data('id');
     $.ajax({
       url: "api/messages",
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id}
+      type: "get",
+      data: { id: last_message_id },
+      dataType: "json"
     })
     .done(function(messages) {
       let insertHTML = '';
@@ -58,14 +58,17 @@ $(function(){
         insertHTML += buildHTML(message);
       });
       $(".right-content__middle").append(insertHTML)
+      if (messages.length !== 0) {
       $(".right-content__middle").animate({
         scrollTop: $(".right-content__middle")[0].scrollHeight}, 'fast');
+      }
     })
     .fail(function() {
       console.log('error');
     });
   };
-  if (path == "/groups/[\d]+/messages"){
+  let path = location.pathname.split("/")
+  if (path[1] == "groups" && path[3] == "messages"){
     setInterval(reloadMessages, 5000);
   }
 });
