@@ -1,9 +1,10 @@
 $(function(){
   function buildHTML(message){
 
+    let id = message.id
     let text_image = `<p>${message.content}</p>
                       <img src="${message.image_url}" alt="graphics">`
-    let html = `<div class="right-content__middle__userdate">
+    let html = `<div class="right-content__middle__userdate" data-id="${id}">
                   <div class="right-content__middle__userdate__user">
                     ${message.user_name}
                   </div>
@@ -11,7 +12,7 @@ $(function(){
                     ${message.created_at}
                   </div>
                 </div>
-                <div class="right-content__middle__message">
+                <div class="right-content__middle__message" data-id="${id}">
                   ${message.image_url ? text_image : message.content }
                 </div>
                   `
