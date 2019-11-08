@@ -1,10 +1,10 @@
 $(function(){
   function buildHTML(message){
 
-    let jid = message.jid
+    let id = message.id
     let text_image = `<p>${message.content}</p>
                       <img src="${message.image_url}" alt="graphics">`
-    let html = `<div class="right-content__middle__userdate" data-id="${jid}">
+    let html = `<div class="right-content__middle__userdate" data-id="${id}">
                   <div class="right-content__middle__userdate__user">
                     ${message.user_name}
                   </div>
@@ -12,7 +12,7 @@ $(function(){
                     ${message.created_at}
                   </div>
                 </div>
-                <div class="right-content__middle__message" data-id="${jid}">
+                <div class="right-content__middle__message" data-id="${id}">
                   ${message.image_url ? text_image : message.content }
                 </div>
                   `
@@ -45,7 +45,7 @@ $(function(){
   })
 
   let reloadMessages = function() {
-    last_message_id = $(".right-content__middle__userdate").last().data('jid');
+    last_message_id = $(".right-content__middle__userdate").last().data('id');
     $.ajax({
       url: "api/messages",
       type: "get",
