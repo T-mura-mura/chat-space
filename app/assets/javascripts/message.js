@@ -53,10 +53,10 @@ $(function(){
       dataType: "json"
     })
     .done(function(messages) {
-
+      console.log(messages);
       let insertHTML = '';
       messages.forEach(function(message){
-        console.log(message.id);
+        console.log(message);
         insertHTML += buildHTML(message);
       });
       $(".right-content__middle").append(insertHTML)
