@@ -16,6 +16,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 public/uploads/*
-public/images/*
+#public/images/*
 .DS_Store
 config/secrets.yml
