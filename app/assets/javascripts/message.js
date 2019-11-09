@@ -55,7 +55,7 @@ $(function(){
     .done(function(messages) {
       let insertHTML = '';
       messages.forEach(function(message){
-        if (message.id !== last_message_id) {
+        if (message.user_name !== current_user.name) {
         insertHTML += buildHTML(message);
         }
       });
@@ -71,6 +71,6 @@ $(function(){
   };
   let path = location.pathname.split("/")
   if (path[1] == "groups" && path[3] == "messages"){
-    setInterval(reloadMessages, 1000);
+    setInterval(reloadMessages, 3000);
   }
 });
