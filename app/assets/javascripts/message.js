@@ -70,6 +70,6 @@ $(function(){
   };
   let path = location.pathname.split("/")
   if (path[1] == "groups" && path[3] == "messages"){
-    setInterval(reloadMessages, 1000);
+    setInterval(reloadMessages, 2000);
   }
 });
