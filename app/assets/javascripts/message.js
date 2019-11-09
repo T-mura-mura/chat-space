@@ -31,7 +31,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data);
       let html = buildHTML(data);
       $(".right-content__middle").append(html)
       $(".right-content__middle").animate({
@@ -54,10 +53,10 @@ $(function(){
       dataType: "json"
     })
     .done(function(messages) {
-      console.log(messages[0].id);
 
       let insertHTML = '';
       messages.forEach(function(message){
+        console.log(message.id);
         insertHTML += buildHTML(message);
       });
       $(".right-content__middle").append(insertHTML)
