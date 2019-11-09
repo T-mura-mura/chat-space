@@ -15,7 +15,7 @@
     .right-content__middle
       = render partial: 'message', collection: @messages
     .right-content__lower
-      = form_for [@group, @message], {html: {class: "message-form"}}  do |f|
+      = form_with [@group, @message], {html: {class: "message-form"}}, local: true  do |f|
         = f.text_field :content, class: 'right-content__lower__textfield', placeholder: 'type a message'
         .right-content__lower__imagefolder
           = f.label :image, class: 'upload-label' do
