@@ -31,6 +31,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      console.log(data);
       let html = buildHTML(data);
       $(".right-content__middle").append(html)
       $(".right-content__middle").animate({
