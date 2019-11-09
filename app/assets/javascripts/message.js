@@ -53,11 +53,11 @@ $(function(){
       dataType: "json"
     })
     .done(function(messages) {
-      console.log(messages);
       let insertHTML = '';
       messages.forEach(function(message){
-        console.log(message);
+        if (message.id !== last_message_id) {
         insertHTML += buildHTML(message);
+        }
       });
       $(".right-content__middle").append(insertHTML)
       if (messages.length !== 0) {
