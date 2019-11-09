@@ -54,10 +54,9 @@ $(function(){
     })
     .done(function(messages) {
       let insertHTML = '';
-      let current_user = $(".left-content__upper__user").val();
-      console.log(current_user);
+      let current_user = $(".current_user_name").val();
       messages.forEach(function(message){
-        if (message.user_name !== current_user.name) {
+        if (message.user_name !== current_user) {
         insertHTML += buildHTML(message);
         }
       });

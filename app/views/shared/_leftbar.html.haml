@@ -2,6 +2,7 @@
   .left-content__upper
     .left-content__upper__user 
       = current_user.name
+      %input{name: "current_user_name", type: "hidden", value: current_user.name, class: 'current_user_name' }
     %ul.left-content__upper__icons
       %li
         =link_to new_group_path, {data: {"turbolinks": false}} do
