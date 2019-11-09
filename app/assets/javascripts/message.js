@@ -54,6 +54,7 @@ $(function(){
       dataType: "json"
     })
     .done(function(messages) {
+      console.log(messages);
       let insertHTML = '';
       messages.forEach(function(message){
         insertHTML += buildHTML(message);
@@ -70,6 +71,6 @@ $(function(){
   };
   let path = location.pathname.split("/")
   if (path[1] == "groups" && path[3] == "messages"){
-    setInterval(reloadMessages, 3000);
+    setInterval(reloadMessages, 1000);
   }
 });
